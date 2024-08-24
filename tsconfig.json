@@ -1,8 +1,3 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json",
-  "include": [
-    "src",
-    "declarations.d.ts",
-    "node_modules/redux"
-  ]
+  "extends": "@react-native/typescript-config/tsconfig.json"
 }

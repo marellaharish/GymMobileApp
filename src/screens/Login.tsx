@@ -1,12 +1,16 @@
-import { Dimensions, Image, KeyboardAvoidingView, StatusBar, StyleSheet, Text, TextInput, View } from 'react-native'
-import { boxShadow, colors, FontSizes, inputFeilds, InputFieldIcon, Padding, widthStyles } from '../styles/Global';
-import React from 'react';
+import { Dimensions, Image, KeyboardAvoidingView, Pressable, StatusBar, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native'
+import { boxShadow, buttons, colors, FontSizes, inputFeilds, InputFieldIcon, Margins, Padding, widthStyles } from '../styles/Global';
+import React, { useState } from 'react';
 import ThemedText from '../styles/ThemedText';
-import { Eye, Logo, User } from '../assets/images';
+import { Eye, Google, Logo, User } from '../assets/images';
 const windowHeight = Dimensions.get('window').height;
 
 const Login = () => {
 
+    const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
+    const togglePasswordVisibility = () => {
+        setIsPasswordVisible(prevState => !prevState);
+    };
     return (
         <>
             <StatusBar backgroundColor={colors.BgColor} barStyle={'dark-content'} />
@@ -19,9 +23,20 @@ const Login = () => {
                         <Image source={User} style={[InputFieldIcon.icon]} />
                     </View>
                     <View style={[widthStyles.w_90, InputFieldIcon.iconHolder]}>
-                        <TextInput placeholderTextColor={colors.placeholder} placeholder='Password' style={styles.input} />
-                        <Image source={Eye} style={[InputFieldIcon.icon]} />
+                        <TextInput placeholderTextColor={colors.placeholder} secureTextEntry={!isPasswordVisible} placeholder='Password' style={styles.input} />
+                        <Pressable onPress={togglePasswordVisibility} style={[InputFieldIcon.icon]}>
+                            <Image source={Eye} />
+                        </Pressable>
                     </View>
+
+                    <Pressable style={[buttons.PrimaryButtom, { ...boxShadow.basicShadow }, styles.buttom]}>
+                        <Text style={buttons.buttonsText}>Login</Text>
+                    </Pressable >
+
+                    <Pressable style={[buttons.whiteButtom, { ...boxShadow.basicShadow }, styles.googleButtom]}>
+                        <Image source={Google} style={{ marginEnd: Margins.m_m }} />
+                        <Text style={buttons.whiteButtonsText}>SIGNIN USING GOOGLE</Text>
+                    </Pressable >
                 </View>
             </KeyboardAvoidingView>
         </>
@@ -51,5 +66,11 @@ const styles = StyleSheet.create({
     },
     inputsContainer: {
         paddingTop: Padding.p_xxl
+    },
+    buttom: {
+        marginTop: Margins.m_2xxl
+    },
+    googleButtom: {
+        marginTop: Margins.m_xxl
     }
 })
