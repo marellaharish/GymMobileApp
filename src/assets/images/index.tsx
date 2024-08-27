@@ -14,6 +14,8 @@ import SelectUserActive from './SelectUserActive.png'
 import ArrowBack from './ArrowBack.png'
 import ArrowRight from './ArrowRight.png'
 import QR from './SampleQr.png'
+import ArrowRightWhite from './ArrowRightWhite.png'
+import SuccessIcon from './SuccessIcon.png'
 export {
     Logo,
     User,
@@ -30,5 +32,7 @@ export {
     SelectUserActive,
     ArrowBack,
     QR,
-    ArrowRight
+    ArrowRight,
+    ArrowRightWhite,
+    SuccessIcon
 }

@@ -154,6 +154,7 @@ const SelectedPlanDetails = ({ planName, itemType, validaty, price, bottomButton
 
     return (
         <>
+
             <View style={styles.selectedPlanContainer}>
                 <View style={[{ marginBottom: Margins.m_l, padding: Padding.p_l, paddingBottom: 0 }]}>
                     <View style={[flexBox.rowBetween,]}>
@@ -261,10 +262,10 @@ const SelectedPlanDetails = ({ planName, itemType, validaty, price, bottomButton
                                 <Text style={[defaultTexts.normalLabels]}>- &#x20B9;150</Text>
                             </View>
                         </View>
-                        <TouchableOpacity style={[styles.addButton, flexBox.rowBetween]}>
+                        <View style={[styles.addButton, flexBox.rowBetween]}>
                             <Text style={[styles.addButtonText]}>Grand Total</Text>
                             <Text style={[styles.addButtonText]}>&#x20B9;1,350</Text>
-                        </TouchableOpacity>
+                        </View>
                     </>
                 ) : (
                     <TouchableOpacity style={[styles.addButton, flexBox.rowBetween]} onPress={handlePresentModalPress}>
@@ -327,7 +328,6 @@ const SelectedPlanDetails = ({ planName, itemType, validaty, price, bottomButton
                     </View>
                 </BottomSheetView>
             </BottomSheetModal>
-
         </>
     )
 };
@@ -442,8 +442,9 @@ const HomeScreen = () => {
                                     validaty={selectedPlan.validaty}
                                     price={selectedPlan.price}
                                     onPress={() => { }}
-                                    bottomButtons={showSlidingView}
-                                />
+                                    bottomButtons={showSlidingView} name={''} gender={''} phoneNumber={''} isSelected={false} onSelect={function (): void {
+                                        throw new Error('Function not implemented.');
+                                    }} />
                             );
                         })}
                     </ScrollView>

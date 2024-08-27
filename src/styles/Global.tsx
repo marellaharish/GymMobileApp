@@ -9,7 +9,7 @@ export const colors = {
     BgColor: "#FFFFFF",
     primary: "#193B8B",
     success: "#50C878",
-    Danger: "FF6161",
+    Danger: "#FF6161",
     TextColor: "#202020",
     Secondary: "#807272",
     Dark: "#000000",
@@ -51,6 +51,7 @@ export function normalize(size: number): number {
 
 export const FontSizes = {
     extraSmall: normalize(14),    // Small font size
+    SecondSmall: normalize(16),    // Small font size
     small: normalize(18),    // Small font size
     normal: normalize(20),  // Regular font size
     regular: normalize(24),  // Regular font size
@@ -191,6 +192,11 @@ export const buttons = StyleSheet.create({
         padding: 15,
         borderRadius: 10
     },
+    CheckOutbtn: {
+        backgroundColor: colors.Danger,
+        padding: 15,
+        borderRadius: 10
+    },
     CheckInbtntxt: {
         color: colors.LightText
     }
@@ -247,8 +253,12 @@ export const defaultTexts = StyleSheet.create({
     },
     memberName: {
         fontSize: FontSizes.normal,
-        fontWeight: "500",
+        fontWeight: "bold",
         color: colors.DarkText
+    },
+    SuccessText: {
+        fontSize: FontSizes.small,
+        color: colors.borderColor
     }
 
 })

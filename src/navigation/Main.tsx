@@ -12,7 +12,7 @@ const RootNavigator = () => {
   if (!isUser) {
     return <Login />
   } else {
-    return <Payments />;
+    return <BottomTabNavigator />;
   }
 };
 export default RootNavigator;
