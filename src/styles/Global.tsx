@@ -17,7 +17,8 @@ export const colors = {
     DarkText: "#000000",
     LightText: "#FFFFFF",
     placeholder: "#C6DFE6",
-    borderColor: "#807272"
+    borderColor: "#807272",
+    light: "#E4F1F5"
 }
 
 
@@ -279,7 +280,11 @@ export const flexBox = StyleSheet.create({
         display: "flex",
         alignItems: "center",
         flexDirection: "row"
-
+    },
+    end: {
+        display: "flex",
+        justifyContent: "flex-end",
+        alignItems: "flex-end"
     }
 })
 
